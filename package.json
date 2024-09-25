@@ -1,7 +1,13 @@
 {
-  "name": "autosync",
-  "displayName": "autosync",
-  "description": "",
+  "name": "codemirror",
+  "displayName": "codemirror",
+  "publisher": "neilmovva",
+  "description": "Synchronize the open workspace folder with a remote server directory.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neilmovva/codemirror"
+  },
+  "icon": "assets/iconsax-driver.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.93.0"
@@ -9,13 +15,23 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "workspaceContains:*"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "autosync.helloWorld",
-        "title": "Hello World"
+        "command": "codemirror.SelectHost",
+        "title": "codemirror: Select Remote Host"
+      },
+      {
+        "command": "codemirror.AddHost",
+        "title": "codemirror: Add New Host"
+      },
+      {
+        "command": "codemirror.RemoveHost",
+        "title": "codemirror: Remove Host"
       }
     ]
   },
